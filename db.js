@@ -1,6 +1,8 @@
 const Sequelize = require('sequelize');
 
 const memberModel = require('./models/member');
+const projectModel = require('./models/project');
+
 
 const sequelize = new Sequelize(
     'video-club',
@@ -11,6 +13,8 @@ const sequelize = new Sequelize(
 });
 
 const Member = memberModel(sequelize, Sequelize);
+const Project = projectModel(sequelize, Sequelize);
+
 
 sequelize.sync({
     force:true
@@ -18,4 +22,4 @@ sequelize.sync({
     console.log("Base de datos actualizada");
 });
 
-module.exports = { Member }
+module.exports = { Member, Project }
