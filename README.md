@@ -7,7 +7,10 @@ La clase **RedSocial** representa las posibles redes sociales que el usuario pue
 
 En resumen, este diagrama de clases muestra cómo las diferentes clases están relacionadas entre sí para satisfacer los requisitos dados.
 
-[![Diagrama de clases](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20clases.jpg?token=GHSAT0AAAAAAB7LJ2EP53JECQ7CJVP4DODYZASH7UA "Diagrama de clases")](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20clases.jpg?token=GHSAT0AAAAAAB7LJ2EP53JECQ7CJVP4DODYZASH7UA "Diagrama de clases")
+[![Diagrama de clases](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20clases.jpg?token=GHSAT0AAAAAAB7LJ2EPZPBD3TOCZSLXPUAGZASJ7HQ "Diagrama de clases")](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20clases.jpg?token=GHSAT0AAAAAAB7LJ2EPZPBD3TOCZSLXPUAGZASJ7HQ "Diagrama de clases")
+
+------------
+
 
 
 # Diagrama de interacción
@@ -31,5 +34,9 @@ Una vez que el usuario concluye sus tareas en esta seccion, tiene la opcion de**
 
 5- Y por ultimo, si el usuario ha terminado de **manejar** o **crear tareas**, tiene la      posibilidad de finalizar su interaccion con el sistema.
 
-[![Diagrama de interaccion](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20interaccion.jpeg?token=GHSAT0AAAAAAB7LJ2EODZN25JPZXNQE5H6SZASJ2YA "Diagrama de interaccion")](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20interaccion.jpeg?token=GHSAT0AAAAAAB7LJ2EODZN25JPZXNQE5H6SZASJ2YA "Diagrama de interaccion")
+[![Diagrama de interaccion](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20interaccion.jpeg?token=GHSAT0AAAAAAB7LJ2EPCZTKGDGR44RZ4J3YZASKANQ "Diagrama de interaccion")](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20interaccion.jpeg?token=GHSAT0AAAAAAB7LJ2EPCZTKGDGR44RZ4J3YZASKANQ "Diagrama de interaccion")
+
+
+
+
 
