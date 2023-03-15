@@ -7,7 +7,7 @@ La clase **RedSocial** representa las posibles redes sociales que el usuario pue
 
 En resumen, este diagrama de clases muestra cómo las diferentes clases están relacionadas entre sí para satisfacer los requisitos dados.
 
-[![Diagrama de clases](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20clases.jpg?token=GHSAT0AAAAAAB7LJ2EPZPBD3TOCZSLXPUAGZASJ7HQ "Diagrama de clases")](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20clases.jpg?token=GHSAT0AAAAAAB7LJ2EPZPBD3TOCZSLXPUAGZASJ7HQ "Diagrama de clases")
+[![Diagrama de clases](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20clases.jpg?token=GHSAT0AAAAAAB7LJ2EPEIWLLVPJX3C6VTAQZASKMPA "Diagrama de clases")](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20clases.jpg?token=GHSAT0AAAAAAB7LJ2EPEIWLLVPJX3C6VTAQZASKMPA "Diagrama de clases")
 
 ------------
 
@@ -30,13 +30,25 @@ Una vez seleccionado el proyecto deseado, el usuario puede darle **cierre al pro
 
 - **Manejo de Usuarios**:
 El usuario tiene la posibilidad de añadir, eliminar o modificar miembros.
-Una vez que el usuario concluye sus tareas en esta seccion, tiene la opcion de** cerrar el proyecto**, regresar al** Dashboard**, **cerrar sesion** o acceder al **manejo** o **creacion de tareas**, que serán asignadas a los miembros del proyecto.
+Una vez que el usuario concluye sus tareas en esta seccion, tiene la opcion de ** cerrar el proyecto** , regresar al ** Dashboard** , **cerrar sesion** o acceder al **manejo** o **creacion de tareas**, que serán asignadas a los miembros del proyecto.
 
 5- Y por ultimo, si el usuario ha terminado de **manejar** o **crear tareas**, tiene la      posibilidad de finalizar su interaccion con el sistema.
 
-[![Diagrama de interaccion](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20interaccion.jpeg?token=GHSAT0AAAAAAB7LJ2EPCZTKGDGR44RZ4J3YZASKANQ "Diagrama de interaccion")](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20interaccion.jpeg?token=GHSAT0AAAAAAB7LJ2EPCZTKGDGR44RZ4J3YZASKANQ "Diagrama de interaccion")
+[![Diagrama de interaccion](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20interaccion.jpeg?token=GHSAT0AAAAAAB7LJ2EPLHYZRPBUC6MVMCE6ZASKLXQ "Diagrama de interaccion")](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20interaccion.jpeg?token=GHSAT0AAAAAAB7LJ2EPLHYZRPBUC6MVMCE6ZASKLXQ "Diagrama de interaccion")
 
 
+------------
+
+#Imagen de docker funcional en docker hub 
+
+[![Docker1](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/docker1.jpeg?token=GHSAT0AAAAAAB7LJ2EOGVHZQCVQLGJLPC2EZASKJWQ "Docker1")](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/docker1.jpeg?token=GHSAT0AAAAAAB7LJ2EOGVHZQCVQLGJLPC2EZASKJWQ "Docker1")
 
 
+------------
 
+
+[![Docker2](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/docker2.jpeg?token=GHSAT0AAAAAAB7LJ2EOXGOGOQ3B26IPBBLKZASKKPQ "Docker2")](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/docker2.jpeg?token=GHSAT0AAAAAAB7LJ2EOXGOGOQ3B26IPBBLKZASKKPQ "Docker2")
+
+------------
+
+[![Docker3](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/docker3.jpeg?token=GHSAT0AAAAAAB7LJ2EP3BYWD7HPF7XZZIHUZASKLFQ "Docker3")](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/docker3.jpeg?token=GHSAT0AAAAAAB7LJ2EP3BYWD7HPF7XZZIHUZASKLFQ "Docker3")
