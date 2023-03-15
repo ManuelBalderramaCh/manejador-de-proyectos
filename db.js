@@ -2,8 +2,10 @@ const Sequelize = require('sequelize');
 
 const memberModel = require('./models/member');
 
-const sequelize = new Sequelize('manejadorDeProyectos',
-'root', '1234', {
+const sequelize = new Sequelize(
+    'video-club',
+    'root', 
+    'secret', {
     host:'127.0.0.1',
     dialect:'mysql'
 });

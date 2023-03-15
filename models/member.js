@@ -6,7 +6,7 @@ module.exports = (sequelize, type) => {
         curp: type.STRING,
         rfc: type.STRING,
         address: type.STRING,
-        abilities: type.LIST
+        //abilities: type.LIST
     });
     return Member;
 };
