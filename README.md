@@ -7,7 +7,8 @@ La clase **RedSocial** representa las posibles redes sociales que el usuario pue
 
 En resumen, este diagrama de clases muestra cómo las diferentes clases están relacionadas entre sí para satisfacer los requisitos dados.
 
-![](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20clases.jpg?token=GHSAT0AAAAAAB7LJ2EOM4FDDNXSLVKEAISKZASHZUA)
+[![Diagrama de clases](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20clases.jpg?token=GHSAT0AAAAAAB7LJ2EP53JECQ7CJVP4DODYZASH7UA "Diagrama de clases")](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/diagrama%20de%20clases.jpg?token=GHSAT0AAAAAAB7LJ2EP53JECQ7CJVP4DODYZASH7UA "Diagrama de clases")
+
 
 
 
