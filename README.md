@@ -39,7 +39,7 @@ Una vez que el usuario concluye sus tareas en esta seccion, tiene la opcion de *
 
 ------------
 
-#Imagen de docker funcional en docker hub 
+# Imagen de docker funcional en docker hub 
 
 [![docker1](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/docker1.jpeg?token=GHSAT0AAAAAAB7LJ2EOFEQ6WHDDPX7J7TECZASKSHQ "docker1")](https://raw.githubusercontent.com/miguel-cortinas/flappy/main/docker1.jpeg?token=GHSAT0AAAAAAB7LJ2EOFEQ6WHDDPX7J7TECZASKSHQ "docker1")
 
