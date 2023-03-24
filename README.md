@@ -12,7 +12,6 @@ En resumen, este diagrama de clases muestra cómo las diferentes clases están r
 ------------
 
 
-
 # Diagrama de interacción
 
 El proposito de este diagrama de interacción es definir y representar el funcionamiento de un sistema, especialmente en lo que respecta a la interacción con el usuario.
@@ -36,6 +35,20 @@ Una vez que el usuario concluye sus tareas en esta seccion, tiene la opcion de *
 
 ![diagrama de interaccion](https://github.com/ManuelBalderramaCh/manejador-de-proyectos/blob/main/diagrama%20de%20interaccion.jpeg)
 
+------------
+# Diagrama de secuencia
+
+Este diagrama está orientado a como los desarrolladores dentro de la aplicación web van a poder interactuar entre ellos y el programa, dividiendolos en los 3 roles posibles: **Product Owner, SCRUM master y Developer.** Básicamente podremos identificar las tareas que cada rol tiene dentro del proyecto, para poder identificar lo que se debe desarrollar en cada rol.
+
+![diagrama de secuencia](https://github.com/ManuelBalderramaCh/manejador-de-proyectos/blob/main/diagrama-de-secuencia.png)
+
+------------
+
+# Diagrama de componentes
+
+Este diagrama nos permite ver los componentes del proyecto y cómo están organizados entre sí. También nos da una idea de lo que contiene cada contenedor (o componente), viendo cada subcomponente dentro de el. Dentro de cada rol, desarrollador, scrum master y el product owner, podemos observar lo que realiza cada uno, y componentes basados en ellos, como se conectan entre si para lograr el producto final.
+
+![diagrama de componentes](https://github.com/ManuelBalderramaCh/manejador-de-proyectos/blob/main/diagrama-de-componentes.png)
 
 ------------
 
@@ -52,3 +65,4 @@ Una vez que el usuario concluye sus tareas en esta seccion, tiene la opcion de *
 ------------
 
 ![docker3](https://github.com/ManuelBalderramaCh/manejador-de-proyectos/blob/main/docker3.jpeg)
+
