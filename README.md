@@ -52,6 +52,10 @@ Este diagrama nos permite ver los componentes del proyecto y cómo están organi
 
 ------------
 
+# Diagrama de casos de uso
+
+![diagrama de casos de uso](https://github.com/ManuelBalderramaCh/manejador-de-proyectos/blob/main/diagrama%20de%20casos%20de%20uso.jpeg)
+
 # Imagen de docker funcional en docker hub 
 
 ![docker1](https://github.com/ManuelBalderramaCh/manejador-de-proyectos/blob/main/docker1.jpeg)
