@@ -3,12 +3,24 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
 
 var membersRouter = require('./routes/members');
 var projectsRouter = require('./routes/projects');
 
+const uri = "mongodb://localhost:27019/manejador-de-proyectos";
+mongoose.connect(uri);
+
+const db = mongoose.connection;
 
 var app = express();
+
+db.on('open', ()=> {
+  console.log("Conection ok");
+})
+db.on('error', ()=> {
+  console.log("Connection not ok");
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
