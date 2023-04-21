@@ -4,11 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
+const {expressjwt} = require('express-jwt');
 
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 var membersRouter = require('./routes/members');
 var projectsRouter = require('./routes/projects');
 
-const uri = "mongodb://localhost:27019/manejador-de-proyectos";
+const uri = "mongodb://localhost:27017/manejador-de-proyectos";
 mongoose.connect(uri);
 
 const db = mongoose.connection;
@@ -32,6 +35,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const jwtKey = "4e0214edc70d400e41d26702d7a3ea02";
+
+app.use(expressjwt({secret:jwtKey, algorithms:['HS256']})
+   .unless({path:["/login"]}));
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 app.use('/members', membersRouter);
 app.use('/projects', projectsRouter);
 
