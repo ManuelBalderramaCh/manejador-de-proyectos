@@ -3,7 +3,13 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user');
 
 function list(req, res, next) {
-    res.send('respond with a actor list');
+    User.find().then(objs => res.status(200).json({
+        message: "Lista de miembros",
+        obj: objs
+    })).catch(ex => res.status(500).json({
+        message: "No se pudo consultar la informacion",
+        obj: ex
+    }));
 }
 
 function index(req, res, next) {
