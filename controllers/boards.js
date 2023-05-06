@@ -3,7 +3,7 @@ const Board = require('../models/board');
 
 function list(req, res, next) {
     Board.find().then(objs => res.status(200).json({
-        message: "Lista de columnas",
+        message: "Lista de boards",
         obj: objs
     })).catch(ex => res.status(500).json({
         message: "No se pudo consultar la informacion",
@@ -14,7 +14,7 @@ function list(req, res, next) {
 function index(req, res, next) {
     const id = req.params.id;
     Board.findOne({"_id":id}).then(obj => res.status(200).json({
-        message: `Columna con id ${id}`, 
+        message: `Board con id ${id}`, 
         obj: obj
     })).catch(ex => res.status(500).json({
         message: "No se pudo consultar la informacion",
@@ -26,16 +26,16 @@ function create(req, res, next) {
     let name = req.body.name;
     let columna = req.body.columna;
 
-    let board = new Rol({
+    let board = new Board({
         name: name,
         columna: columna
     });
 
-    rol.save().then(obj => res.status(200).json({
-        message:"Columna creado correctamente.",
+    board.save().then(obj => res.status(200).json({
+        message:"Board creado correctamente.",
         obj:obj
     })).catch(ex => res.status(500).json({
-        message: "La columna no se pudo crear.",
+        message: "El board no se pudo crear.",
         ex:ex
     }));
 }
@@ -52,7 +52,7 @@ function replace(req, res, next) {
     
     Board.findOneAndUpdate({"_id":id},rol,{new : true})
             .then(obj => res.status(200).json({
-                message: "Columna actualizada correctamente",
+                message: "Board actualizada correctamente",
                 obj: obj
             })).catch(ex => res.status(500).json({
                 message: "No se pudo actualizar la informacion",
@@ -75,7 +75,7 @@ function update(req, res, next) {
 
     Board.findOneAndUpdate({"_id":id}, user, {new:true})
         .then(obj => res.status(200).json({
-            message: "Columna actualizada correctamente",
+            message: "Board actualizada correctamente",
             obj: obj
         })).catch(ex => res.status(500).json({
             message: "No se pudo reemplazar el rol",
@@ -88,7 +88,7 @@ function destroy(req, res, next) {
     const id = req.params.id;
     Board.findByIdAndRemove({"_id":id})
             .then(obj => res.status(200).json({
-                message: "Columna eliminado correctamente",
+                message: "Board eliminado correctamente",
                 obj:obj
             })).catch(ex => res.status(500).json({
                 message: "No se pudo eliminar el rol",

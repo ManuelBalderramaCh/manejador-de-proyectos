@@ -9,6 +9,9 @@ const config = require('config');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const columnsRouter = require('./routes/columns');
+const rolesRouter = require('./routes/roles');
+const teamsRouter = require('./routes/teams');
 var membersRouter = require('./routes/members');
 var projectsRouter = require('./routes/projects');
 
@@ -44,6 +47,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/members', membersRouter);
 app.use('/projects', projectsRouter);
+app.use('./roles', rolesRouter);
+app.use('./columns', columnsRouter);
+app.use('./teams', teamsRouter);
 
 
 // catch 404 and forward to error handler
