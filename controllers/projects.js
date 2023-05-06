@@ -1,5 +1,6 @@
 const express = require('express');
 const Project = require('../models/projects');
+
 function list(req, res, next) {
     Project.find().then(objs => res.status(200).json({
         message: "Lista de miembros",
