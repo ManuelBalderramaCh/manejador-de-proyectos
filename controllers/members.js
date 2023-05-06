@@ -107,7 +107,7 @@ function update(req, res, next) {
             message: "Miembro actualizado correctamente",
             obj: obj
           })).catch(ex => res.status(500).json({
-            message: "No se pudo reemplazar el usuario",
+            message: "No se pudo reemplazar el miembro",
             obj: ex
           }));
 }

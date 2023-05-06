@@ -23,35 +23,56 @@ function index(req, res, next) {
 }
 
 function create(req, res, next) {
-    let name = req.body.name;
-    let lastName = req.body.lastName;
+    let projectName = req.body.projectName;
+    let applicationDate = req.body.applicationDate;
+    let startUpDate = req.body.startUpDate;
+    let description = req.body.description;
+    let projectManagerId = req.body.projectManagerId;
+    let projectOwnerId = req.body.projectOwnerId;
+    let team = req.body.team;
 
     let project = new Project({
-        name:name, lastName:lastName
+        projectName:projectName, 
+        applicationDate:applicationDate,
+        startUpDate: startUpDate,
+        description: description,
+        projectManagerId: projectManagerId,
+        projectOwnerId: projectOwnerId,
+        team: team
     });
 
     project.save().then(obj => res.status(200).json({
-        message:"Miembro creado correctamente.",
+        message:"Proyecto creado correctamente.",
         obj:obj
     })).catch(ex => res.status(500).json({
-        message: "Miembro no se pudo crear.",
+        message: "Proyecto no se pudo crear.",
         ex:ex
     }));
 }
 
 function replace(req, res, next) {
     const id = req.params.id;
-    let name = req.body.name ? req.body.name : "";
-    let lastName = req.body.lastName ? req.body.lastName : "";
+    let projectName = req.body.projectName ? req.body.projectName : "";
+    let applicationDate = req.body.applicationDate ? req.body.applicationDate : "";
+    let startUpDate = req.body.startUpDate ? req.body.startUpDate: "";
+    let description = req.body.description ? req.body.description: "";
+    let projectManagerId = req.body.projectManagerId ? req.body.projectManagerId: "";
+    let projectOwnerId = req.body.projectOwnerId ? req.body.projectOwnerId: "";
+    let team = req.body.team ? req.body.team: "";
 
     let project = new Object({
-        _name: name,
-        _lastName: lastName
+        _projectName: projectName,
+        _applicationDate: applicationDate,
+        _startUpDate: startUpDate,
+        _description: description,
+        _projectManagerId: projectManagerId,
+        _projectOwnerId: projectOwnerId,
+        _team: team
     });
-    //Director.findOneAndUpdate({},director,{}).then().catch();
+    
     Project.findOneAndUpdate({"_id":id},project,{new : true})
             .then(obj => res.status(200).json({
-                message: "Miembro actualizado correctamente",
+                message: "Proyecto actualizado correctamente",
                 obj: obj
             })).catch(ex => res.status(500).json({
                 message: "No se pudo actualizar la informacion",
@@ -60,17 +81,56 @@ function replace(req, res, next) {
 }
 
 function update(req, res, next) {
-    res.send(`respond with a update director = ${req.params.id}`);
+    const id = req.params.id
+    let projectName = req.body.projectName;
+    let applicationDate = req.body.applicationDate;
+    let startUpDate = req.body.startUpDate;
+    let description = req.body.description;
+    let projectManagerId = req.body.projectManagerId;
+    let projectOwnerId = req.body.projectOwnerId;
+    let team = req.body.team;
+
+    let project = new Object();
+
+    if(projectName)
+        project._projectName = projectName;
+
+    if(applicationDate)
+        project._applicationDate = applicationDate;
+    
+    if(startUpDate)
+        project._startUpDate = startUpDate;
+
+    if(description)
+        project._description = description;
+
+    if(projectManagerId)
+        project._projectMagerId = projectManagerId;
+    
+    if(projectOwnerId)
+        project._projectOwnerId = projectOwnerId;
+
+    if(team)
+        project._team = team;
+
+    Project.findOneAndUpdate({"_id":id}, project, {new:true})
+            .then(obj => res.status(200).json({
+                message: "Proyecto actualizado correctamente",
+                obj: obj
+            })).catch(ex => res.status(500).json({
+                message: "No se puedo reemplazar el proyecto",
+                obj: ex
+            }));
 }
 
 function destroy(req, res, next) {
     const id = req.params.id;
     Project.findByIdAndRemove({"_id":id})
             .then(obj => res.status(200).json({
-                message: "Miembro eliminado correctamente",
+                message: "Proyecto eliminado correctamente",
                 obj:obj
             })).catch(ex => res.status(500).json({
-                message: "No se pudo eliminar el miembro",
+                message: "No se pudo eliminar el proyecto",
                 obj:ex
             }));
 }
