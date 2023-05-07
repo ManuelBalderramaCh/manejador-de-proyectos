@@ -4,10 +4,10 @@ const Member = require('../models/members');
 
 function list(req, res, next) {
     Team.find().then(objs => res.status(200).json({
-        message: "Lista de equipos",
+        message: res.__('ok.team'),
         obj: objs
     })).catch(ex => res.status(500).json({
-        message: "No se pudo consultar la informacion",
+        message: res.__('bad.team'),
         obj: ex
     }));
 }
@@ -15,10 +15,10 @@ function list(req, res, next) {
 function index(req, res, next) {
     const id = req.params.id;
     Team.findOne({"_id":id}).then(obj => res.status(200).json({
-        message: `Team con id ${id}`, 
+        message: res.__('ok.team'), 
         obj: obj
     })).catch(ex => res.status(500).json({
-        message: "No se pudo consultar la informacion",
+        message: res.__('bad.team'),
         obj:ex
     }));
 }
@@ -36,10 +36,10 @@ async function create(req, res, next) {
     });
 
     team.save().then(obj => res.status(200).json({
-        message:"Equipo creado correctamente.",
+        message: res.__('ok.team'),
         obj:obj
     })).catch(ex => res.status(500).json({
-        message: "El equipo no se pudo crear.",
+        message: res.__('bad.team'),
         ex:ex
     }));
 }
@@ -55,10 +55,10 @@ function replace(req, res, next) {
     
     Team.findOneAndUpdate({"_id":id},Team,{new : true})
             .then(obj => res.status(200).json({
-                message: "Equipo actualizado correctamente",
+                message: res.__('ok.team'),
                 obj: obj
             })).catch(ex => res.status(500).json({
-                message: "No se pudo actualizar la informacion",
+                message: res.__('bad.team'),
                 obj:ex
             }));
 }
@@ -75,10 +75,10 @@ function update(req, res, next) {
 
     Team.findOneAndUpdate({"_id":id}, Team)
         .then(obj => res.status(200).json({
-            message: "Equipo actualizado correctamente",
+            message: res.__('ok.team'),
             obj: obj
         })).catch(ex => res.status(500).json({
-            message: "No se pudo reemplazar el equipo",
+            message: res.__('bad.team'),
             obj: ex
         }))
 
@@ -88,10 +88,10 @@ function destroy(req, res, next) {
     const id = req.params.id;
     Team.findByIdAndRemove({"_id":id})
             .then(obj => res.status(200).json({
-                message: "Equipo eliminado correctamente",
+                message: res.__('ok.team'),
                 obj:obj
             })).catch(ex => res.status(500).json({
-                message: "No se pudo eliminar el equipo",
+                message: res.__('bad.team'),
                 obj:ex
             }));
 }

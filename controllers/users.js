@@ -4,10 +4,10 @@ const User = require('../models/user');
 
 function list(req, res, next) {
     User.find().then(objs => res.status(200).json({
-        message: "Lista de miembros",
+        message: res.__('ok.user'),
         obj: objs
     })).catch(ex => res.status(500).json({
-        message: "No se pudo consultar la informacion",
+        message: res.__('bad.user'),
         obj: ex
     }));
 }
@@ -34,10 +34,10 @@ async function create(req, res, next) {
     });
 
     user.save().then(obj => res.status(200).json({
-        message: 'Usuario creado correctamente',
+        message: res.__('ok.user'),
         obj: obj
     })).catch(ex => res.status(500).json({
-        message: 'no se pudo almacenar el usuario',
+        message: res.__('bad.user'),
         obj: ex
     }));
 }

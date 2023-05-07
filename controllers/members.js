@@ -15,7 +15,7 @@ function list(req, res, next) {
 function index(req, res, next) {
     const id = req.params.id;
     Member.findOne({"_id":id}).then(obj => res.status(200).json({
-        message: `Miembro con id ${id}`, 
+        message: res.__('ok.member'), 
         obj: obj
     })).catch(ex => res.status(500).json({
         message: res.__('bad.member'),
@@ -43,10 +43,10 @@ async function create(req, res, next) {
     });
 
     member.save().then(obj => res.status(200).json({
-        message:"Miembro creado correctamente.",
+        message: res.__('ok.member'),
         obj:obj
     })).catch(ex => res.status(500).json({
-        message: "Miembro no se pudo crear.",
+        message: res.__('bad.member'),
         ex:ex
     }));
 }
@@ -69,10 +69,10 @@ function replace(req, res, next) {
     
     Member.findOneAndUpdate({"_id":id},member,{new : true})
             .then(obj => res.status(200).json({
-                message: "Miembro actualizado correctamente",
+                message: res.__('ok.member'),
                 obj: obj
             })).catch(ex => res.status(500).json({
-                message: "No se pudo actualizar la informacion",
+                message: res.__('bad.member'),
                 obj:ex
             }));
 }
@@ -104,10 +104,10 @@ function update(req, res, next) {
 
     Member.findOneAndUpdate({"_id":id}, user, {new:true})
           .then(obj => res.status(200).json({
-            message: "Miembro actualizado correctamente",
+            message: res.__('ok.member'),
             obj: obj
           })).catch(ex => res.status(500).json({
-            message: "No se pudo reemplazar el miembro",
+            message: res.__('bad.member'),
             obj: ex
           }));
 }
@@ -116,10 +116,10 @@ function destroy(req, res, next) {
     const id = req.params.id;
     Member.findByIdAndRemove({"_id":id})
             .then(obj => res.status(200).json({
-                message: "Miembro eliminado correctamente",
+                message: res.__('ok.member'),
                 obj:obj
             })).catch(ex => res.status(500).json({
-                message: "No se pudo eliminar el miembro",
+                message: res.__('bad.member'),
                 obj:ex
             }));
 }

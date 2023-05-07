@@ -4,10 +4,10 @@ const UserHistory = require('../models/userHistory');
 
 function list(req, res, next) {
     Column.find().then(objs => res.status(200).json({
-        message: "Lista de columnas",
+        message: res.__('ok.column'),
         obj: objs
     })).catch(ex => res.status(500).json({
-        message: "No se pudo consultar la informacion",
+        message: res.__('bad.column'),
         obj: ex
     }));
 }
@@ -15,10 +15,10 @@ function list(req, res, next) {
 function index(req, res, next) {
     const id = req.params.id;
     Column.findOne({"_id":id}).then(obj => res.status(200).json({
-        message: `Columna con id ${id}`, 
+        message: res.__('ok.column'), 
         obj: obj
     })).catch(ex => res.status(500).json({
-        message: "No se pudo consultar la informacion",
+        message: res.__('bad.column'),
         obj:ex
     }));
 }
@@ -35,10 +35,10 @@ async function create(req, res, next) {
     });
 
     column.save().then(obj => res.status(200).json({
-        message:"Columna creado correctamente.",
+        message: res.__('ok.column'),
         obj:obj
     })).catch(ex => res.status(500).json({
-        message: "La columna no se pudo crear.",
+        message: res.__('bad.column'),
         ex:ex
     }));
 }
@@ -54,10 +54,10 @@ function replace(req, res, next) {
     
     Column.findOneAndUpdate({"_id":id},Column,{new : true})
             .then(obj => res.status(200).json({
-                message: "Columna actualizada correctamente",
+                message: res.__('ok.column'),
                 obj: obj
             })).catch(ex => res.status(500).json({
-                message: "No se pudo actualizar la informacion",
+                message: res.__('bad.column'),
                 obj:ex
             }));
 }
@@ -75,10 +75,10 @@ function update(req, res, next) {
 
     Column.findOneAndUpdate({"_id":id}, Column)
         .then(obj => res.status(200).json({
-            message: "Columna actualizada correctamente",
+            message: res.__('ok.column'),
             obj: obj
         })).catch(ex => res.status(500).json({
-            message: "No se pudo reemplazar el rol",
+            message: res.__('bad.column'),
             obj: ex
         }))
 
@@ -88,10 +88,10 @@ function destroy(req, res, next) {
     const id = req.params.id;
     Column.findByIdAndRemove({"_id":id})
             .then(obj => res.status(200).json({
-                message: "Columna eliminado correctamente",
+                message: res.__('ok.column'),
                 obj:obj
             })).catch(ex => res.status(500).json({
-                message: "No se pudo eliminar la columna",
+                message: res.__('bad.column'),
                 obj:ex
             }));
 }

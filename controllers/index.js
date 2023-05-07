@@ -19,19 +19,19 @@ function login(req, res, next) {
             bcrypt.hash(password, user.salt, (err, hash) => {
                 if(err){
                     res.status(403).json({
-                        message: 'usuario y/o contrasena incorrecto',
+                        message: res.__('ok.login'),
                         obj: err
                     });
                  }
 
                 if(hash === user.password){
                     res.status(200).json({
-                        message: 'login ok',
+                        message: res.__('ok.login'),
                         obj: jwt.sign({data: user.id, exp: Math.floor(Date.now()/1000)+60}, jwtKey)
                     });
                     }else{
                     res.status(403).json({
-                        message: 'usuario y/o contrasena incorrecto',
+                        message: res.__('bad.login'),
                         obj: null
                     });
                 }
@@ -40,7 +40,7 @@ function login(req, res, next) {
 
         }else{
             res.status(403).json({
-                message: 'usuario y/o contrasena incorrecto',
+                message: res.__('bad.login'),
                 obj: null
             });
         }

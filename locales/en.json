@@ -1,0 +1,21 @@
+{
+    "ok.login":"Login success",
+    "bad.login":"User or password are wrong.",
+    "ok.board":"Board response",
+    "bad.board":"Board without response",
+    "ok.column":"Column response",
+    "bad.column":"Column without response",
+    "ok.member":"Member response",
+    "bad.member":"Member without response",
+    "ok.project":"Project response",
+    "bad.project":"Project without response",
+    "ok.rol":"Rol response",
+    "bad.rol":"Rol without response",
+    "ok.team":"Team response",
+    "bad.team":"Team without response",
+    "ok.history":"User History response",
+    "bad.history":"User History without response",
+    "ok.user":"User response",
+    "bad.user":"User without response"
+
+}

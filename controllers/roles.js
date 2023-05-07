@@ -3,10 +3,10 @@ const Rol = require('../models/rol');
 
 function list(req, res, next) {
     Rol.find().then(objs => res.status(200).json({
-        message: "Lista de roles",
+        message: res.__('ok.rol'),
         obj: objs
     })).catch(ex => res.status(500).json({
-        message: "No se pudo consultar la informacion",
+        message: res.__('bad.rol'),
         obj: ex
     }));
 }
@@ -14,10 +14,10 @@ function list(req, res, next) {
 function index(req, res, next) {
     const id = req.params.id;
     Rol.findOne({"_id":id}).then(obj => res.status(200).json({
-        message: `Rol con id ${id}`, 
+        message: res.__('ok.rol'), 
         obj: obj
     })).catch(ex => res.status(500).json({
-        message: "No se pudo consultar la informacion",
+        message: res.__('bad.rol'),
         obj:ex
     }));
 }
@@ -30,10 +30,10 @@ function create(req, res, next) {
     });
 
     rol.save().then(obj => res.status(200).json({
-        message:"Rol creado correctamente.",
+        message: res.__('ok.rol'),
         obj:obj
     })).catch(ex => res.status(500).json({
-        message: "El Rol no se pudo crear.",
+        message: res.__('bad.rol'),
         ex:ex
     }));
 }
@@ -48,10 +48,10 @@ function replace(req, res, next) {
     
     Rol.findOneAndUpdate({"_id":id},rol,{new : true})
             .then(obj => res.status(200).json({
-                message: "Miembro actualizado correctamente",
+                message: res.__('ok.rol'),
                 obj: obj
             })).catch(ex => res.status(500).json({
-                message: "No se pudo actualizar la informacion",
+                message: res.__('bad.rol'),
                 obj:ex
             }));
 }
@@ -67,10 +67,10 @@ function update(req, res, next) {
 
     Rol.findOneAndUpdate({"_id":id}, user, {new:true})
         .then(obj => res.status(200).json({
-            message: "Rol actualizado correctamente",
+            message: res.__('ok.rol'),
             obj: obj
         })).catch(ex => res.status(500).json({
-            message: "No se pudo reemplazar el rol",
+            message: res.__('bad.rol'),
             obj: ex
         }))
 
@@ -80,10 +80,10 @@ function destroy(req, res, next) {
     const id = req.params.id;
     Rol.findByIdAndRemove({"_id":id})
             .then(obj => res.status(200).json({
-                message: "Rol eliminado correctamente",
+                message: res.__('ok.rol'),
                 obj:obj
             })).catch(ex => res.status(500).json({
-                message: "No se pudo eliminar el rol",
+                message: res.__('bad.rol'),
                 obj:ex
             }));
 }

@@ -3,10 +3,10 @@ const Project = require('../models/projects');
 
 function list(req, res, next) {
     Project.find().then(objs => res.status(200).json({
-        message: "Lista de miembros",
+        message: res.__('ok.project'),
         obj: objs
     })).catch(ex => res.status(500).json({
-        message: "No se pudo consultar la informacion",
+        message: res.__('bad.project'),
         obj: ex
     }));
 }
@@ -14,10 +14,10 @@ function list(req, res, next) {
 function index(req, res, next) {
     const id = req.params.id;
     Project.findOne({"_id":id}).then(obj => res.status(200).json({
-        message: `Miembro con id ${id}`, // Interpolacion
+        message: res.__('ok.project'),
         obj: obj
     })).catch(ex => res.status(500).json({
-        message: "No se pudo consultar la informacion",
+        message: res.__('bad.project'),
         obj:ex
     }));
 }
@@ -42,10 +42,10 @@ function create(req, res, next) {
     });
 
     project.save().then(obj => res.status(200).json({
-        message:"Proyecto creado correctamente.",
+        message: res.__('ok.project'),
         obj:obj
     })).catch(ex => res.status(500).json({
-        message: "Proyecto no se pudo crear.",
+        message: res.__('bad.project'),
         ex:ex
     }));
 }
@@ -72,10 +72,10 @@ function replace(req, res, next) {
     
     Project.findOneAndUpdate({"_id":id},project,{new : true})
             .then(obj => res.status(200).json({
-                message: "Proyecto actualizado correctamente",
+                message: res.__('ok.project'),
                 obj: obj
             })).catch(ex => res.status(500).json({
-                message: "No se pudo actualizar la informacion",
+                message: res.__('bad.project'),
                 obj:ex
             }));
 }
@@ -115,10 +115,10 @@ function update(req, res, next) {
 
     Project.findOneAndUpdate({"_id":id}, project, {new:true})
             .then(obj => res.status(200).json({
-                message: "Proyecto actualizado correctamente",
+                message: res.__('ok.project'),
                 obj: obj
             })).catch(ex => res.status(500).json({
-                message: "No se puedo reemplazar el proyecto",
+                message: res.__('bad.project'),
                 obj: ex
             }));
 }
@@ -127,10 +127,10 @@ function destroy(req, res, next) {
     const id = req.params.id;
     Project.findByIdAndRemove({"_id":id})
             .then(obj => res.status(200).json({
-                message: "Proyecto eliminado correctamente",
+                message: res.__('ok.project'),
                 obj:obj
             })).catch(ex => res.status(500).json({
-                message: "No se pudo eliminar el proyecto",
+                message: res.__('bad.project'),
                 obj:ex
             }));
 }

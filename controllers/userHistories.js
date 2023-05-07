@@ -4,10 +4,10 @@ const Column = require('../models/column');
 
 function list(req, res, next) {
     UserHistory.find().then(objs => res.status(200).json({
-        message: "Lista de historias",
+        message: res.__('ok.history'),
         obj: objs
     })).catch(ex => res.status(500).json({
-        message: "No se pudo consultar la informacion",
+        message: res.__('bad.history'),
         obj: ex
     }));
 }
@@ -15,10 +15,10 @@ function list(req, res, next) {
 function index(req, res, next) {
     const id = req.params.id;
     UserHistory.findOne({"_id":id}).then(obj => res.status(200).json({
-        message: `Historia con id ${id}`, 
+        message: res.__('ok.history'),
         obj: obj
     })).catch(ex => res.status(500).json({
-        message: "No se pudo consultar la informacion",
+        message: res.__('bad.history'),
         obj:ex
     }));
 }
@@ -41,10 +41,10 @@ async function create(req, res, next) {
     });
 
     userHistory.save().then(obj => res.status(200).json({
-        message:"Historia creada correctamente.",
+        message: res.__('ok.history'),
         obj:obj
     })).catch(ex => res.status(500).json({
-        message: "La historia no se pudo crear.",
+        message: res.__('bad.history'),
         ex:ex
     }));
 }
@@ -66,10 +66,10 @@ function replace(req, res, next) {
     
     UserHistory.findOneAndUpdate({"_id":id},UserHistory,{new : true})
             .then(obj => res.status(200).json({
-                message: "Historia actualizada correctamente",
+                message: res.__('ok.history'),
                 obj: obj
             })).catch(ex => res.status(500).json({
-                message: "No se pudo actualizar la informacion",
+                message: res.__('bad.history'),
                 obj:ex
             }));
 }
@@ -93,10 +93,10 @@ function update(req, res, next) {
 
     UserHistory.findOneAndUpdate({"_id":id}, UserHistory)
         .then(obj => res.status(200).json({
-            message: "Historia actualizada correctamente",
+            message: res.__('ok.history'),
             obj: obj
         })).catch(ex => res.status(500).json({
-            message: "No se pudo reemplazar la historia",
+            message: res.__('bad.history'),
             obj: ex
         }))
 
@@ -106,10 +106,10 @@ function destroy(req, res, next) {
     const id = req.params.id;
     UserHistory.findByIdAndRemove({"_id":id})
             .then(obj => res.status(200).json({
-                message: "Historia eliminado correctamente",
+                message: res.__('ok.history'),
                 obj:obj
             })).catch(ex => res.status(500).json({
-                message: "No se pudo eliminar la historia",
+                message: res.__('bad.history'),
                 obj:ex
             }));
 }
