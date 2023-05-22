@@ -4,20 +4,28 @@ const schema = mongoose.Schema({
     _name:String,
     _lastName:String,
     _birthDay: String,
+    _curp: String,
+    _rfc: String,
+    _address: String,
+    _role: String,
+    enum: ['Product Owner', 'Project Manager', 'Developer'],
+    _abilities: String,
+    enum: ['Junior', 'Senior', 'Master'],
     _email: String,
     _password: String,
     _salt: String,
-    _rol: {
-        type: mongoose.Schema.ObjectId,
-        ref: 'Rol'
-    }
 });
 
 class Member {
-    constructor(name,lastName){
+    constructor(name,lastName, birthDay, curp, rfc, address, role, abilities, salt){
         this._name = name;
         this._lastName = lastName;
         this._birthDay = birthDay;
+        this._curp = curp;
+        this._rfc = rfc;
+        this._address = address;
+        this._role = role;
+        this._abilities = abilities;
         this._email = email;
         this._password = password;
         this._salt = salt;
@@ -40,6 +48,41 @@ class Member {
     set birthDay(v){
         this._birthDay = v;
     }
+    get curp(){
+        return this._curp;
+    }
+    set curp(v){
+        this._curp = v;
+    }
+    //rfc
+    get rfc(){
+        return this._rfc;
+    }
+    set rfc(v){
+        this._rfc = v;
+    }
+    //address
+    get address(){
+        return this._address;
+    }
+    set address(v){
+        this._address = v;
+    }
+    //role
+    get role(){
+        return this._role;
+    }
+    set role(v){
+        this._role = v;
+    }
+    //abilities
+    get abilities(){
+        return this._abilities;
+    }
+    set abilities(v){
+        this._abilities = v;
+    }
+    
     get email(){
         return this._email;
     }
@@ -56,13 +99,7 @@ class Member {
         return this._salt;
     }
     set salt(v){
-        this._salt = salt;
-    }
-    get roles(){
-        return this._roles;
-    }
-    set roles(v){
-        this._roles = v;
+        this._salt = v;
     }
 }
 

@@ -51,6 +51,7 @@ app.use(cors({
   origin: "http://127.0.0.1:8080"
 }));
 
+
 const jwtKey = config.get("secret.key");
 
 // app.use(expressjwt({secret:jwtKey, algorithms:['HS256']})
