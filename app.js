@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const {expressjwt} = require('express-jwt');
 const config = require('config');
 const i18n = require('i18n');
+const cors = require('cors');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -46,11 +47,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(i18n.init);
+app.use(cors({
+  origin: "http://127.0.0.1:8080"
+}));
 
 const jwtKey = config.get("secret.key");
 
-app.use(expressjwt({secret:jwtKey, algorithms:['HS256']})
-   .unless({path:["/login"]}));
+// app.use(expressjwt({secret:jwtKey, algorithms:['HS256']})
+//    .unless({path:["/login"]}));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/members', membersRouter);
