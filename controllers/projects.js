@@ -29,6 +29,7 @@ function create(req, res, next) {
     let description = req.body.description;
     let projectManager = req.body.projectManager;
     let projectOwner = req.body.projectOwner;
+    let developer = req.body.developer;
 
     let project = new Project({
         projectName:projectName, 
@@ -36,7 +37,8 @@ function create(req, res, next) {
         startUpDate: startUpDate,
         description: description,
         projectManager: projectManager,
-        projectOwner: projectOwner
+        projectOwner: projectOwner,
+        developer: developer
     });
 
     project.save().then(obj => res.status(200).json({
@@ -56,6 +58,7 @@ function replace(req, res, next) {
     let description = req.body.description ? req.body.description: "";
     let projectManager = req.body.projectManager ? req.body.projectManager: "";
     let projectOwner = req.body.projectOwner ? req.body.projectOwner: "";
+    let developer = req.body.developer ? req.body.developer: "";
 
     let project = new Object({
         _projectName: projectName,
@@ -64,6 +67,7 @@ function replace(req, res, next) {
         _description: description,
         _projectManager: projectManager,
         _projectOwner: projectOwner,
+        _developer: developer
     });
     
     Project.findOneAndUpdate({"_id":id},project,{new : true})
@@ -84,6 +88,7 @@ function update(req, res, next) {
     let description = req.body.description;
     let projectManager = req.body.projectManager;
     let projectOwner = req.body.projectOwner;
+    let developer = req.body.developer;
 
     let project = new Object();
 
@@ -99,11 +104,14 @@ function update(req, res, next) {
     if(description)
         project._description = description;
 
-    if(projectManagerId)
+    if(projectManager)
         project._projectManager = projectManager;
     
-    if(projectOwnerId)
+    if(projectOwner)
         project._projectOwner = projectOwner;
+
+    if(developer)
+        project._developer = developer;
 
     Project.findOneAndUpdate({"_id":id}, project, {new:true})
             .then(obj => res.status(200).json({

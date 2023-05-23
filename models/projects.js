@@ -7,16 +7,18 @@ const schema = mongoose.Schema({
     _description:String,
     _projectManager:String,
     _projectOwner:String,
+    _developer: String
 });
 
 class Project {
-    constructor(projectName, applicationDate, startUpDate, description, projectManagerId, projectOwnerId, team){
+    constructor(projectName, applicationDate, startUpDate, description, projectManager, projectOwner, developer){
         this._projectName = projectName;
         this._applicationDate = applicationDate;
         this._startUpDate = startUpDate;
         this._description = description;
-        this._projectManager = projectManagerId;
-        this._projectOwner = projectOwnerId;
+        this._projectManager = projectManager;
+        this._projectOwner = projectOwner;
+        this._developer = developer;
     }
     
     get projectName(){
@@ -57,8 +59,15 @@ class Project {
     get projectOwner(){
         return this._projectOwner;
     }
-    set projectOwnerId(v){
+    set projectOwner(v){
         this._projectOwner = v;
+    }
+
+    get developer(){
+        return this._developer;
+    }
+    set developer(v){
+        this._developer = v;
     }
 
 }
