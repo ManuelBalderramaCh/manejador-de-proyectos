@@ -13,11 +13,12 @@ const schema = mongoose.Schema({
     enum: ['Junior', 'Senior', 'Master'],
     _email: String,
     _password: String,
+    _project: String,
     _salt: String,
 });
 
 class Member {
-    constructor(name,lastName, birthDay, curp, rfc, address, role, abilities, salt){
+    constructor(name,lastName, birthDay, curp, rfc, address, role, abilities, salt, project){
         this._name = name;
         this._lastName = lastName;
         this._birthDay = birthDay;
@@ -29,6 +30,7 @@ class Member {
         this._email = email;
         this._password = password;
         this._salt = salt;
+        this._project = project;
     }
     get name(){
         return this._name;
@@ -82,7 +84,13 @@ class Member {
     set abilities(v){
         this._abilities = v;
     }
-    
+    //project
+    get project(){
+        return this._project;
+    }
+    set project(v){
+        this._project = v;
+    }
     get email(){
         return this._email;
     }

@@ -40,6 +40,8 @@ async function create(req, res, next) {
     let email = req.body.email;
     let password = req.body.password;
 
+    let project = req.body.project;
+
     const salt = await bcrypt.genSalt(10);
     const passwordHash = await bcrypt.hash(password, salt);
 
@@ -54,6 +56,7 @@ async function create(req, res, next) {
         abilities: abilities,
         email: email,
         password: passwordHash,
+        project: project,
         salt: salt
     });
 
@@ -78,6 +81,7 @@ function replace(req, res, next) {
     let abilities = req.body.abilities ? req.body.abilities: "";
     let email = req.body.email ? req.body.email: "";
     let password = req.body.password ? req.body.password : "";
+    let project = req.body.project ? req.body.project: "";
 
     let member = new Object({
         _name: name,
@@ -89,7 +93,8 @@ function replace(req, res, next) {
         _role: role,
         _abilities: abilities,
         _email: email,
-        _password: password
+        _password: password,
+        _project: project
     });
     
     Member.findOneAndUpdate({"_id":id},member,{new : true})
@@ -109,6 +114,7 @@ function update(req, res, next) {
     let email = req.body.email;
     let birthDay = req.body.birthDay;
     let password = req.body.password;
+    let project = req.body.project;
 
     //curp
     let curp = req.body.curp;
@@ -119,8 +125,7 @@ function update(req, res, next) {
     //role
     let role = req.body.role;
     //abilities
-    let abilities = req.body.abilities;
-    
+    let abilities = req.body.abilities;    
 
     let member = new Object();
 
@@ -152,7 +157,10 @@ function update(req, res, next) {
         member._email = email;
 
     if(password)
-        member._password = password
+        member._password = password;
+
+    if(project)
+        member._project = project;
 
     Member.findOneAndUpdate({"_id":id}, member, {new:true})
           .then(obj => res.status(200).json({
