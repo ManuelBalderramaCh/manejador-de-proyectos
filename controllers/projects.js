@@ -105,7 +105,7 @@ function update(req, res, next) {
         project._description = description;
 
     if(projectManagerId)
-        project._projectMagerId = projectManagerId;
+        project._projectManagerId = projectManagerId;
     
     if(projectOwnerId)
         project._projectOwnerId = projectOwnerId;
