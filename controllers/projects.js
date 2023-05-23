@@ -27,18 +27,16 @@ function create(req, res, next) {
     let applicationDate = req.body.applicationDate;
     let startUpDate = req.body.startUpDate;
     let description = req.body.description;
-    let projectManagerId = req.body.projectManagerId;
-    let projectOwnerId = req.body.projectOwnerId;
-    let team = req.body.team;
+    let projectManager = req.body.projectManager;
+    let projectOwner = req.body.projectOwner;
 
     let project = new Project({
         projectName:projectName, 
         applicationDate:applicationDate,
         startUpDate: startUpDate,
         description: description,
-        projectManagerId: projectManagerId,
-        projectOwnerId: projectOwnerId,
-        team: team
+        projectManager: projectManager,
+        projectOwner: projectOwner
     });
 
     project.save().then(obj => res.status(200).json({
@@ -56,18 +54,16 @@ function replace(req, res, next) {
     let applicationDate = req.body.applicationDate ? req.body.applicationDate : "";
     let startUpDate = req.body.startUpDate ? req.body.startUpDate: "";
     let description = req.body.description ? req.body.description: "";
-    let projectManagerId = req.body.projectManagerId ? req.body.projectManagerId: "";
-    let projectOwnerId = req.body.projectOwnerId ? req.body.projectOwnerId: "";
-    let team = req.body.team ? req.body.team: "";
+    let projectManager = req.body.projectManager ? req.body.projectManager: "";
+    let projectOwner = req.body.projectOwner ? req.body.projectOwner: "";
 
     let project = new Object({
         _projectName: projectName,
         _applicationDate: applicationDate,
         _startUpDate: startUpDate,
         _description: description,
-        _projectManagerId: projectManagerId,
-        _projectOwnerId: projectOwnerId,
-        _team: team
+        _projectManager: projectManager,
+        _projectOwner: projectOwner,
     });
     
     Project.findOneAndUpdate({"_id":id},project,{new : true})
@@ -86,9 +82,8 @@ function update(req, res, next) {
     let applicationDate = req.body.applicationDate;
     let startUpDate = req.body.startUpDate;
     let description = req.body.description;
-    let projectManagerId = req.body.projectManagerId;
-    let projectOwnerId = req.body.projectOwnerId;
-    let team = req.body.team;
+    let projectManager = req.body.projectManager;
+    let projectOwner = req.body.projectOwner;
 
     let project = new Object();
 
@@ -105,13 +100,10 @@ function update(req, res, next) {
         project._description = description;
 
     if(projectManagerId)
-        project._projectManagerId = projectManagerId;
+        project._projectManager = projectManager;
     
     if(projectOwnerId)
-        project._projectOwnerId = projectOwnerId;
-
-    if(team)
-        project._team = team;
+        project._projectOwner = projectOwner;
 
     Project.findOneAndUpdate({"_id":id}, project, {new:true})
             .then(obj => res.status(200).json({

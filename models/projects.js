@@ -5,12 +5,8 @@ const schema = mongoose.Schema({
     _applicationDate: String,
     _startUpDate: String,
     _description:String,
-    _projectManagerId:String,
-    _projectOwnerId:String,
-    _team: {
-        type: mongoose.Schema.ObjectId,
-        ref: 'Team'
-    }
+    _projectManager:String,
+    _projectOwner:String,
 });
 
 class Project {
@@ -19,9 +15,8 @@ class Project {
         this._applicationDate = applicationDate;
         this._startUpDate = startUpDate;
         this._description = description;
-        this._projectManagerId = projectManagerId;
-        this._projectOwnerId = projectOwnerId;
-        this._team = team;
+        this._projectManager = projectManagerId;
+        this._projectOwner = projectOwnerId;
     }
     
     get projectName(){
@@ -52,26 +47,20 @@ class Project {
         this._description = v;
     }
 
-    get projectManagerId(){
-        return this._projectManagerId;
+    get projectManager(){
+        return this._projectManager;
     }
-    set projectManagerId(v){
-        this._projectManagerId = v;
+    set projectManager(v){
+        this._projectManager = v;
     }
 
-    get projectOwnerId(){
-        return this._projectOwnerId;
+    get projectOwner(){
+        return this._projectOwner;
     }
     set projectOwnerId(v){
-        this._projectOwnerId = v;
+        this._projectOwner = v;
     }
 
-    get team(){
-        return this._team;
-    }
-    set team(v){
-        this._team = v;
-    }
 }
 
 schema.loadClass(Project);
