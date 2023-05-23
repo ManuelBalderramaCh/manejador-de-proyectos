@@ -60,10 +60,10 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/members', membersRouter);
 app.use('/projects', projectsRouter);
-app.use('./userHistories', userHistoriesRouter);
-app.use('./roles', rolesRouter);
-app.use('./columns', columnsRouter);
-app.use('./teams', teamsRouter);
+app.use('/userHistories', userHistoriesRouter);
+app.use('/roles', rolesRouter);
+app.use('/columns', columnsRouter);
+app.use('/teams', teamsRouter);
 
 
 // catch 404 and forward to error handler
