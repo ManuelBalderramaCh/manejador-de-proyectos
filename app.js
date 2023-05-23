@@ -48,9 +48,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(i18n.init);
 app.use(cors({
-  origin: "http://127.0.0.1:8080"
+  origin: "http://localhost:8080"
 }));
-
 
 const jwtKey = config.get("secret.key");
 
