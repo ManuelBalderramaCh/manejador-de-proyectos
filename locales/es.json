@@ -16,6 +16,8 @@
     "ok.history":"Historial de usuario responde correctamente",
     "bad.history":"Historial de usuario sin respuesta",
     "ok.user":"Usuario responde correctamente",
-    "bad.user":"Usuario sin respuesta"
+    "bad.user":"Usuario sin respuesta",
+    "ok.task":"Task responde correctamente",
+    "bad.tasks":"Task sin respuesta"
 
 }

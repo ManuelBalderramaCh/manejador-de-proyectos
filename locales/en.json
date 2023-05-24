@@ -16,6 +16,9 @@
     "ok.history":"User History response",
     "bad.history":"User History without response",
     "ok.user":"User response",
-    "bad.user":"User without response"
+    "bad.user":"User without response",
+    "ok.task":"Task response",
+    "bad.tasks":"Task without response"
+
 
 }

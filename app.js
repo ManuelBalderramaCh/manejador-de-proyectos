@@ -15,8 +15,9 @@ const columnsRouter = require('./routes/columns');
 const rolesRouter = require('./routes/roles');
 const userHistoriesRouter = require('./routes/userHistories');
 const teamsRouter = require('./routes/teams');
-var membersRouter = require('./routes/members');
-var projectsRouter = require('./routes/projects');
+const membersRouter = require('./routes/members');
+const projectsRouter = require('./routes/projects');
+const tasksRouter = require('./routes/tasks');
 
 const uri = config.get("dbChain");
 mongoose.connect(uri);
@@ -64,6 +65,7 @@ app.use('/userHistories', userHistoriesRouter);
 app.use('/roles', rolesRouter);
 app.use('/columns', columnsRouter);
 app.use('/teams', teamsRouter);
+app.use('/tasks', tasksRouter);
 
 
 // catch 404 and forward to error handler
