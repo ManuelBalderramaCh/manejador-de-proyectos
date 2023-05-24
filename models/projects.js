@@ -7,11 +7,12 @@ const schema = mongoose.Schema({
     _description:String,
     _projectManager:String,
     _projectOwner:String,
-    _developer: String
+    _developer: String,
+    _tasks: [{_description:String, _status:String, _responsable:String, _priority:String}]
 });
 
 class Project {
-    constructor(projectName, applicationDate, startUpDate, description, projectManager, projectOwner, developer){
+    constructor(projectName, applicationDate, startUpDate, description, projectManager, projectOwner, developer, tasks){
         this._projectName = projectName;
         this._applicationDate = applicationDate;
         this._startUpDate = startUpDate;
@@ -19,6 +20,7 @@ class Project {
         this._projectManager = projectManager;
         this._projectOwner = projectOwner;
         this._developer = developer;
+        this._tasks = [tasks];
     }
     
     get projectName(){
@@ -68,6 +70,12 @@ class Project {
     }
     set developer(v){
         this._developer = v;
+    }
+    get tasks(){
+        return this._tasks;
+    }
+    set tasks(v){
+        this._tasks = v;
     }
 
 }

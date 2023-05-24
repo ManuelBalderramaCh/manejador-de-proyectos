@@ -30,6 +30,7 @@ function create(req, res, next) {
     let projectManager = req.body.projectManager;
     let projectOwner = req.body.projectOwner;
     let developer = req.body.developer;
+    let tasks = [req.body.tasks];
 
     let project = new Project({
         projectName:projectName, 
@@ -38,7 +39,8 @@ function create(req, res, next) {
         description: description,
         projectManager: projectManager,
         projectOwner: projectOwner,
-        developer: developer
+        developer: developer,
+        tasks: tasks
     });
 
     project.save().then(obj => res.status(200).json({
