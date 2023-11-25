@@ -56,9 +56,7 @@ Este diagrama nos permite ver los componentes del proyecto y cómo están organi
 
 ![diagrama de casos de uso](https://github.com/ManuelBalderramaCh/manejador-de-proyectos/blob/main/diagrama%20de%20casos%20de%20uso.jpeg)
 
-# Link de Back4app
 
-https://manejadordeproyectos-a330836.b4a.run/
 
 
 
